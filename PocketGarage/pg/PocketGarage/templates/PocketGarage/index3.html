@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" class="no-js">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Pocket Garage - Repuestos</title>
+    <meta name="description" content="Todo lo relacionado al mundo automotriz.">
+    <link rel="stylesheet" href="{% static 'PocketGarage/css/style1.css' %}" type="text/css">
+</head>
+
+<body leftmargin="0" topmargin="0" rightmargin="0" >
+	<header>
+		<div id="logo">POCKET GARAGE</div>
+		<nav>  
+			<ul>
+				<li><a href="/PocketGarage/index1.html">Inicio</a>
+				<li><a href="/PocketGarage/index2.html">Vehículos</a>
+				<li><a href="/PocketGarage/register.html">Registrarse</a></li>
+				<li><a href="/PocketGarage/login.html">Iniciar Sesion</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<strong style="color:white">Aquí te mostramos el catálogo de todos los repuestos que tenemos disponibles.</strong>
+	</section>
+	<section>
+		{% for repuesto in Repuestos %}
+		<section>
+			<img src="/media/{{ repuesto.Foto }}" width="500" height="300"><br>
+			<p style="color:white">
+				Descripción: {{ repuesto.Descripcion }}<br>
+				Precio: {{ repuesto.Precio }}<br>
+				Información del Vendedor:<br>
+				Nombre: {{ repuesto.Nombre_Vendedor }}<br>
+				Telefono: {{ repuesto.Telefono_Vendedor }}<br>
+				Email: {{ repuesto.Email_Vendedor }}<br>
+				<br>
+			</p>
+		</section>
+		{% endfor %}
+	</section>
+	<footer>
+		<p style="color:white">&copy; Pocket Garage</p>
+	</footer>
+</body>
+</html>
